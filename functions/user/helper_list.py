@@ -1,0 +1,12 @@
+observationCategories = {"Průměrná denní teplota vzduchu" : 0, 
+         "Maximální denní teplota vzduchu" : 1, 
+         "Minimální denní teplota vzduchu" : 2, 
+         "Průměrná denní relativní vlhkost vzduchu" : 3, 
+         "Denní úhrn srážek" : 4, 
+         "Výška nově napadlého sněhu" : 5, 
+         "Celková výška sněhové pokrývky" : 6, 
+         "Denní úhrn doby trvání slunečního svitu" : 7, 
+         "Průměrný denní tlak vzduchu" : 8, 
+         "Průměrná denní rychlost větru" : 9, 
+         "Maximální rychlost větru" : 10, 
+         "Globální záření" : 11}

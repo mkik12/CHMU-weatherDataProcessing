@@ -1,0 +1,47 @@
+# This file contains metadata for your plugin.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=ČHMÚ/CHMI – Meteorological Data Processing
+qgisMinimumVersion=3.0
+description=Měření o počasí a prostorová interpolace dat.
+version=0.1
+author=Mikuláš Kadečka
+email=mikulas.kad@seznam.cz
+
+about=Tento nástroj obsahuje odkaz ke stažení ucelených a předpřipravených měření o počasí, jejichž původní podoba komplikuje zpracování v aplikacích GIS. Dále je schopen stažená data zpracovat pomocí procesu prostorové interpolace.
+
+tracker=https://github.com/mkik12/CHMU-weatherDataProcessing/issues
+repository=https://github.com/mkik12/CHMU-weatherDataProcessing
+# End of mandatory metadata
+
+# Recommended items:
+
+hasProcessingProvider=no
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=automatizace, ČHMÚ, prostorová data, Python
+
+homepage=https://github.com/mkik12/CHMU-weatherDataProcessing
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+Category of the plugin: Raster, Vector, Database or Web
+# category=
+
+# If the plugin can run on QGIS Server.
+server=False
+
