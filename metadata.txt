@@ -5,12 +5,12 @@
 [general]
 name=ČHMÚ/CHMI – Meteorological Data Processing
 qgisMinimumVersion=3.0
-description=Měření o počasí a prostorová interpolace dat.
+description=Weather measurements and spatial data interpolation.
 version=0.1
 author=Mikuláš Kadečka
 email=mikulas.kad@seznam.cz
 
-about=Tento nástroj obsahuje odkaz ke stažení ucelených a předpřipravených měření o počasí, jejichž původní podoba komplikuje zpracování v aplikacích GIS. Dále je schopen stažená data zpracovat pomocí procesu prostorové interpolace.
+about=This tool provides a link to download comprehensive and preprocessed weather measurements, as the original format complicates processing in GIS applications. Additionally, it can process the downloaded data using spatial interpolation.
 
 tracker=https://github.com/mkik12/CHMU-weatherDataProcessing/issues
 repository=https://github.com/mkik12/CHMU-weatherDataProcessing
