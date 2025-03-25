@@ -39,38 +39,48 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="231"/>
+        <location filename="../data_chmu.py" line="229"/>
         <source>Chyba vstupních parametrů: Zadejte vrstvu pro rozsah výstupu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="245"/>
+        <location filename="../data_chmu.py" line="256"/>
         <source>Chyba vstupních parametrů: Počáteční datum je až po koncovém datumu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="248"/>
+        <location filename="../data_chmu.py" line="259"/>
         <source>Chyba vstupních parametrů: Počáteční a koncové datum nemůže být stejné.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="284"/>
+        <location filename="../data_chmu.py" line="298"/>
         <source>Hotovo: Tedy doufám :)).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="287"/>
+        <location filename="../data_chmu.py" line="301"/>
         <source>Chyba: Ve Vaší oblasti se nenachází žádné měřící stanice - oblast přesuňte či zvětšte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="290"/>
+        <location filename="../data_chmu.py" line="304"/>
         <source>Chyba: Z Vámi zadaného časového období nelze vytvořit rastr.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="293"/>
+        <location filename="../data_chmu.py" line="307"/>
         <source>Chyba: Vzniklá bodová pole se nepovedlo nahrát.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data_chmu.py" line="310"/>
+        <source>Chyba: Vámi zadanou vstupního vrstvu se nepodařilo načíst.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data_chmu.py" line="240"/>
+        <source>Chyba vstupních parametrů: Pro volbu rozsahu zadejte vektorovou vrtvu.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -267,12 +277,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="792"/>
+        <location filename="../data_chmu_dialog_base.ui" line="836"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="802"/>
+        <location filename="../data_chmu_dialog_base.ui" line="846"/>
         <source>Nápověda</source>
         <translation type="unfinished"></translation>
     </message>
@@ -292,25 +302,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="765"/>
+        <location filename="../data_chmu_dialog_base.ui" line="771"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Prosím čekejte, plugin právě zpracovává data…&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Pros&#xc3;&#xad;m &#xc4;&#x8d;ekejte...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="823"/>
+        <location filename="../data_chmu_dialog_base.ui" line="812"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;O pluginu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Tento plugin umožňuje zpracování meteorologických měření ČHMÚ pomocí metod prostorové interpolace. Pro správnou funkčnost vyžaduje specificky upravené soubory, které lze stáhnout v sekci &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Nastavení&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;. Zde je také dostupný odkaz ke stažení skriptů pro automatické stahování původních souborů z webu ČHMÚ a jejich následnou konverzi do formátu vhodného pro zpracování v GIS.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Absolutní cestu k adresáři &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;&amp;quot;spatial_data&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;, který si buď stáhnete a dekomprimujete, nebo vytvoříte pomocí zveřejněných skriptů, je nutné zadat do příslušného pole v sekci Nastavení. Pro správné fungování pluginu &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;nesmí&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; být změněna struktura adresáře ani upravovány poskytované soubory!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Vstupní vrstva rozsahu musí být &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;vektorová&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;, ideálně polygon.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pro více informací stiskněte tlačítko &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Nápověda&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>

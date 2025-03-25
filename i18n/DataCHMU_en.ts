@@ -34,37 +34,37 @@
         <translation>Error: The specified directory path does not point to the &apos;spatial_data&apos; folder.</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="231"/>
+        <location filename="../data_chmu.py" line="229"/>
         <source>Chyba vstupních parametrů: Zadejte vrstvu pro rozsah výstupu.</source>
         <translation>Input parameter error: Please enter a layer for the output extent.</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="245"/>
+        <location filename="../data_chmu.py" line="256"/>
         <source>Chyba vstupních parametrů: Počáteční datum je až po koncovém datumu.</source>
         <translation>Input parameter error: The start date is after the end date.</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="248"/>
+        <location filename="../data_chmu.py" line="259"/>
         <source>Chyba vstupních parametrů: Počáteční a koncové datum nemůže být stejné.</source>
         <translation>Input parameter error: The start date and end date cannot be the same.</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="284"/>
+        <location filename="../data_chmu.py" line="298"/>
         <source>Hotovo: Tedy doufám :)).</source>
         <translation>Done: Well, I hope so :)).</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="287"/>
+        <location filename="../data_chmu.py" line="301"/>
         <source>Chyba: Ve Vaší oblasti se nenachází žádné měřící stanice - oblast přesuňte či zvětšte.</source>
         <translation>Error: No measuring stations are located in your area - move or zoom out on the area.</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="290"/>
+        <location filename="../data_chmu.py" line="304"/>
         <source>Chyba: Z Vámi zadaného časového období nelze vytvořit rastr.</source>
         <translation>Error: A raster cannot be created from the specified time period.</translation>
     </message>
     <message>
-        <location filename="../data_chmu.py" line="293"/>
+        <location filename="../data_chmu.py" line="307"/>
         <source>Chyba: Vzniklá bodová pole se nepovedlo nahrát.</source>
         <translation>Error: The resulting point fields could not be loaded.</translation>
     </message>
@@ -72,6 +72,16 @@
         <location filename="../data_chmu.py" line="218"/>
         <source>Chyba: V jedné z kategorií vstupních dat chybí bodová vrstva měřících stanic.</source>
         <translation>Error: The point layer of the measuring stations is missing in one of the input data categories.</translation>
+    </message>
+    <message>
+        <location filename="../data_chmu.py" line="310"/>
+        <source>Chyba: Vámi zadanou vstupního vrstvu se nepodařilo načíst.</source>
+        <translation>The input layer you provided could not be loaded.</translation>
+    </message>
+    <message>
+        <location filename="../data_chmu.py" line="240"/>
+        <source>Chyba vstupních parametrů: Pro volbu rozsahu zadejte vektorovou vrtvu.</source>
+        <translation>Input parameter error: Please provide a vector layer for the extent selection.</translation>
     </message>
 </context>
 <context>
@@ -202,12 +212,12 @@
         <translation>Link to download data:</translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="792"/>
+        <location filename="../data_chmu_dialog_base.ui" line="836"/>
         <source>Start</source>
         <translation>Run</translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="802"/>
+        <location filename="../data_chmu_dialog_base.ui" line="846"/>
         <source>Nápověda</source>
         <translation>Help</translation>
     </message>
@@ -292,36 +302,44 @@
         <translation>GitHub</translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="765"/>
+        <location filename="../data_chmu_dialog_base.ui" line="771"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Prosím čekejte, plugin právě zpracovává data…&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Please wait, the plugin is currently processing data…</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Prosím čekejte...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Please wait...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../data_chmu_dialog_base.ui" line="823"/>
+        <location filename="../data_chmu_dialog_base.ui" line="812"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;O pluginu&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Tento plugin umožňuje zpracování meteorologických měření ČHMÚ pomocí metod prostorové interpolace. Pro správnou funkčnost vyžaduje specificky upravené soubory, které lze stáhnout v sekci &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Nastavení&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;. Zde je také dostupný odkaz ke stažení skriptů pro automatické stahování původních souborů z webu ČHMÚ a jejich následnou konverzi do formátu vhodného pro zpracování v GIS.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Absolutní cestu k adresáři &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;&amp;quot;spatial_data&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;, který si buď stáhnete a dekomprimujete, nebo vytvoříte pomocí zveřejněných skriptů, je nutné zadat do příslušného pole v sekci Nastavení. Pro správné fungování pluginu &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;nesmí&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; být změněna struktura adresáře ani upravovány poskytované soubory!&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Vstupní vrstva rozsahu musí být &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;vektorová&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;, ideálně polygon.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Pro více informací stiskněte tlačítko &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Nápověda&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;About the Plugin&lt;/span&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;About the plugin&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;This plugin enables the processing of meteorological measurements from ČHMÚ using spatial interpolation methods. For proper functionality, it requires specifically formatted files, which can be downloaded from the &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Settings&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; section. This section also provides a link to download scripts for automatically retrieving the original files from the ČHMÚ website and converting them into a format suitable for GIS processing.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;This plugin allows the processing of weather measurements from the Czech Hydrometeorological Institute (CHMI) using spatial interpolation methods. For proper functionality, it requires specifically formatted files, which can be downloaded in the &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Settings&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; section. A link to download scripts for automatic downloading of the original files from the CHMI website and their subsequent conversion to a format suitable for GIS processing is also available here.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;The absolute path to the &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;&amp;quot;spatial_data&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; directory - either downloaded and extracted or created using the provided scripts - must be entered into the appropriate field in the Settings section. To ensure the correct operation of the plugin, the directory structure &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;must not be&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; altered, nor should the provided files be modified!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;The absolute path to the directory &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;&amp;quot;spatial_data&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;, which you either download and decompress, or create using the published scripts, must be entered in the relevant field in the Settings section. For the plugin to function correctly, the directory structure &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;must not&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; be altered, nor should the provided files be modified!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;The input layer of the extent must be &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;vector&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;, ideally a polygon.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;For more information, press the &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Help&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; button.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>

@@ -22,7 +22,7 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction, QApplication
 from qgis.core import QgsCoordinateReferenceSystem
-from qgis.core import Qgis, QgsProviderRegistry
+from qgis.core import Qgis, QgsWkbTypes
 from datetime import datetime
 from qgis.gui import QgsFileWidget
 from shutil import copytree
@@ -224,12 +224,23 @@ class DataCHMU:
         chosenCategory = self.dlg.categoryComboBox.currentText()
 
         intersectArea = self.dlg.extentComboBox.currentLayer()
+
         if intersectArea is None:
             message = self.tr("Chyba vstupních parametrů: Zadejte vrstvu pro rozsah výstupu.")
             return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
         elif not intersectArea.isValid():
-            message = self.tr("Chyba vstupních parametrů: Zadejte vrstvu pro rozsah výstupu.")
+            message = self.tr("Chyba: Vámi zadanou vstupního vrstvu se nepodařilo načíst.")
             return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
+        elif not isinstance(intersectArea, QgsVectorLayer) or intersectArea.wkbType()==100:
+            message = self.tr("Chyba vstupních parametrů: Pro volbu rozsahu zadejte vektorovou vrtvu.")
+            return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
+        
+        try:
+            if intersectArea.wkbType()==100:
+                message = self.tr("Chyba vstupních parametrů: Pro volbu rozsahu zadejte vektorovou vrtvu.")
+                return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
+        except:
+            pass
 
         outputPath = self.canCreateFile(self.dlg.rasFileWidget.filePath())
 
@@ -248,7 +259,10 @@ class DataCHMU:
             message = self.tr("Chyba vstupních parametrů: Počáteční a koncové datum nemůže být stejné.")
             return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
 
-        dataPath = f"{dataSource}/{user.observationCategories[chosenCategory]}"
+        try:
+            dataPath = os.path.join(dataSource, str(user.observationCategoriesEN[chosenCategory]))
+        except:
+            dataPath = os.path.join(dataSource, str(user.observationCategoriesCZ[chosenCategory]))
 
         outputName = validation.getOutputName(chosenCategory, interpolationMethod, outputPath)
 
@@ -291,6 +305,9 @@ class DataCHMU:
             return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
         elif output == 3:
             message = self.tr("Chyba: Vzniklá bodová pole se nepovedlo nahrát.")
+            return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
+        elif output == 4:
+            message = self.tr("Chyba: Vámi zadanou vstupního vrstvu se nepodařilo načíst.")
             return self.iface.messageBar().pushMessage(message, level = Qgis.Warning)
         self.dlg.processingWarning.hide()
 

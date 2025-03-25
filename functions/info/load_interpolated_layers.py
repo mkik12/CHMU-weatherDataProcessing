@@ -25,5 +25,7 @@ def loadInterpolatedLayers(inputLayers, dates, category):
         
         packagedLayer = QgsVectorLayer(result["OUTPUT"], f"{date[0].toString('dd/MM/yyyy')} - {date[1].toString('dd/MM/yyyy')}", "ogr")
 
-        QgsProject.instance().addMapLayer(packagedLayer, False)
-        group.addLayer(packagedLayer)
+        if packagedLayer.featureCount() != 0:
+
+            QgsProject.instance().addMapLayer(packagedLayer, False)
+            group.addLayer(packagedLayer)

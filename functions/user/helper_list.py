@@ -1,4 +1,4 @@
-observationCategories = {"Průměrná denní teplota vzduchu" : 0, 
+observationCategoriesCZ = {"Průměrná denní teplota vzduchu" : 0, 
          "Maximální denní teplota vzduchu" : 1, 
          "Minimální denní teplota vzduchu" : 2, 
          "Průměrná denní relativní vlhkost vzduchu" : 3, 
@@ -10,3 +10,16 @@ observationCategories = {"Průměrná denní teplota vzduchu" : 0,
          "Průměrná denní rychlost větru" : 9, 
          "Maximální rychlost větru" : 10, 
          "Globální záření" : 11}
+
+observationCategoriesEN = {"Average daily air temperature" : 0, 
+         "Maximum daily air temperature" : 1, 
+         "Minimum daily air temperature" : 2, 
+         "Average daily relative humidity" : 3, 
+         "Daily precipitation total" : 4, 
+         "Height of newly fallen snow" : 5, 
+         "Total snow cover depth" : 6, 
+         "Daily total duration of sunshine" : 7, 
+         "Average daily air pressure" : 8, 
+         "Average daily wind speed" : 9, 
+         "Maximum wind speed" : 10, 
+         "Global radiation" : 11}

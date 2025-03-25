@@ -1,5 +1,7 @@
 from copy import deepcopy
 from datetime import datetime
+from PyQt5.QtCore import QDate
+import os
 
 from qgis.core import(
     QgsVectorLayer
@@ -15,7 +17,7 @@ def meanValuePerDate(IDs, dates, data, dataPath):
     for ID in IDs:
 
         dates01 = deepcopy(dates)
-        table = QgsVectorLayer(f"{dataPath}\\{ID}.gpkg", str(ID), "ogr")
+        table = QgsVectorLayer(os.path.join(dataPath, str(ID) + ".gpkg"), str(ID), "ogr")
     
         if table.featureCount() == 0:
             del data[ID]
@@ -35,7 +37,15 @@ def meanValuePerDate(IDs, dates, data, dataPath):
             day = attributes[3]
             value = attributes[4]
             
-            featureDate = datetime(year, month, day)
+            featureDate = QDate(year, month, day)
+
+            while dates01 and dates01[0][1] < featureDate:
+
+                dates01.pop(0)
+                data[ID].append(None)
+
+            if not dates01:
+                break
             
             if dates01[0][0] <= featureDate < dates01[0][1]:
                 if newValue is None:
@@ -49,15 +59,40 @@ def meanValuePerDate(IDs, dates, data, dataPath):
             if featureDate < dates01[0][0]:
                 continue
 
-            while dates01 and dates01[0][1] <= featureDate:
-                dates01.pop(0)
-
+            if featureDate == dates01[0][1]:
                 if newValue is not None:
-                    newValue = newValue/count
+                    newValue = (newValue + value) / (count + 1)
                     newValue = round(newValue, 3)
                     data[ID].append(newValue)
+
                 else:
                     data[ID].append(None)
+
+                dates01.pop(0)
+
+                newValue = None
+                count = 0
+
+                continue
+
+            # if dates01[0][1] < featureDate:
+            #     dates01.pop(0)
+
+            #     if newValue is None:
+            #         newValue = value
+            #         count = 1
+            #     else:
+            #         newValue += value
+            #         count += 1
+
+            #     data[ID].append(None)
+
+        if dates01 and newValue is not None:
+            newValue = newValue/count
+            newValue = round(newValue, 3)
+            data[ID].append(newValue)
+            
+            dates01.pop(0)
                     
         if dates01:
             for _ in dates01:

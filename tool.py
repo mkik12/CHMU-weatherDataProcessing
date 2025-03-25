@@ -38,16 +38,19 @@ def mainFunction(parameters: dict):
                                                              'TARGET_CRS': crs,
                                                              'OUTPUT': 'TEMPORARY_OUTPUT'})
     stationsLayer = projectedLayer["OUTPUT"]
-    
-    projectedArea = processing.run("native:reprojectlayer", {'INPUT': intersectArea,
-                                                                       'TARGET_CRS': crs,
-                                                                       'OUTPUT': 'TEMPORARY_OUTPUT'})
+
+    try:
+        projectedArea = processing.run("native:reprojectlayer", {'INPUT': intersectArea,
+                                                                        'TARGET_CRS': crs,
+                                                                        'OUTPUT': 'TEMPORARY_OUTPUT'})
         
-    intersectAreaAsEnvelope = processing.run("qgis:minimumboundinggeometry", {
-                                                'INPUT': projectedArea["OUTPUT"],
-                                                'FIELD': '',
-                                                'TYPE': 0,
-                                                'OUTPUT': 'TEMPORARY_OUTPUT'})
+        intersectAreaAsEnvelope = processing.run("qgis:minimumboundinggeometry", {
+                                                    'INPUT': projectedArea["OUTPUT"],
+                                                    'FIELD': '',
+                                                    'TYPE': 0,
+                                                    'OUTPUT': 'TEMPORARY_OUTPUT'})
+    except:
+        return 4
 
     stationsLayerSelected = processing.run("native:selectbylocation", {
                                             'INPUT': stationsLayer,
@@ -83,6 +86,7 @@ def mainFunction(parameters: dict):
     interpolatedRasters = []
     layersToLoad = []
 
+    print(data)
     ## 3.3 Cycle that creates a list of weighted NumPy arrays generated from raster interpolation
     for i in range(len(dates)):
 
@@ -103,7 +107,6 @@ def mainFunction(parameters: dict):
         options.fileEncoding = "UTF-8"
         # options.ct = QgsCoordinateTransformContext()
         options.crs = memoryLayer.crs()
-        # tempPath = f"C:\\Users\\mikul\\Desktop\\Bakalářská práce\\TEMP\\{i}.gpkg"
         QgsVectorFileWriter.writeAsVectorFormatV3(memoryLayer, tempPath, QgsCoordinateTransformContext(), options)
         layersToLoad.append(tempPath)
 
@@ -120,7 +123,7 @@ def mainFunction(parameters: dict):
     if len(interpolatedRasters) == 0:
         return 2
     else:
-        finalArrRaster = raster.createFinalArrRaster(interpolatedRasters, weightDivisor) #fungovalo by to i bez podmínky
+        finalArrRaster = raster.createFinalArrRaster(interpolatedRasters, weightDivisor)
 
     ## 3.5 Saving the final raster in ASCII raster format (GIS format) 
     tempPath = utils.getTempPath(".asc", tempDir)
