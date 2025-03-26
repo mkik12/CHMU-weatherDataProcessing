@@ -6,7 +6,10 @@ This QGIS plugin processes meteorological measurements published by the Czech Hy
 
 You can either download preprocessed datasets from this [webpage](https://drive.google.com/drive/folders/12qYemjNOktYcyJgaK6pPfBqbJCzDAlbV?usp=sharing) or use scripts from this [GitHub repository](https://github.com/mkik12/CHMU-weatherFilesScraper) to automate the download of raw data from the CHMI website and convert them into a format suitable for GIS processing.
 
-## What Results to Expect  
+## What Results to Expect
+
+> [!IMPORTANT]  
+> Please take the tool's results with caution, as this is my first attempt at creating a plugin, and the results may be distorted.
 
 The plugin analyzes the activity of CHMI measuring stations and, based on the user-specified time interval, groups them into units with the same active periods. These groups serve as input for multiple iterations of spatial interpolation, accounting for the fact that stations frequently change locations and often switch between active and inactive states.
 
@@ -23,6 +26,9 @@ The tool can generate the following outputs:
 2. Start the plugin, go to the **Settings** tab, and set the directory path for the "spatial_data" folder obtained in the first step.  
 3. Switch to the **Raster** tab and fill in the primary and secondary parameters.  
 4. Click the **Start** button to run the plugin.
+
+> [!TIP]
+> Be cautious when setting the extent layer parameter, which must be a vector layer - preferably a polygon - and the cell size, whose unit is determined by the chosen projection.
 
 ## How the Plugin Works  
 
