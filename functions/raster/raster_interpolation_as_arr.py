@@ -6,8 +6,8 @@ import time
 def rasterInterpolationAsArr(path: str, extent, extentCoordinates, cellSize: float, method: str, power: int) -> np.array:
 
     '''
-    Creates a raster using the specified interpolation method from vector point layer. 
-    The raster is then converted into NumPy array for further calculation.  
+    Creates a raster from a vector point layer using the specified interpolation method.  
+    The raster is then converted into a NumPy array for generating the weighted average raster.
     '''
 
     xMin, yMin, xMax, yMax = extentCoordinates

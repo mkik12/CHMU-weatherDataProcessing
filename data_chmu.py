@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# This is a part of "ČHMÚ - Data o počasí," a QGIS plugin that processes meteorological data published by CHMI.  
+# This is a part of "ČHMÚ/CHMI – Meteorological Data Processing" a QGIS plugin
+# that processes meteorological data published by CHMI.  
 # Copyright (C) 2025 by Mikuláš Kadečka - mikulas.kad@seznam.cz  
 
 # This program is free software: you can redistribute it and/or modify
@@ -157,7 +158,7 @@ class DataCHMU:
         self.dlg.show()
         # Run the dialog event loop
 
-        #virtLayerName = self.tr("virtuální vrstva")
+        ## Adding functionality to the user interface (UI)
         fontSize = self.dlg.categoryLabel.font().pointSize()
         self.dlg.helperText.setFontPointSize(fontSize)
         self.dlg.processingWarning.setFontPointSize(fontSize)
@@ -173,7 +174,6 @@ class DataCHMU:
         self.dlg.endDate.setDate(datetime(2024, 1, 1))
 
         self.dlg.rasFileWidget.setDisabled(True)
-        #self.dlg.rasFileWidget.setFilePath(virtLayerName)
 
         self.dlg.projectionWidget.setCrs(QgsCoordinateReferenceSystem(f'EPSG:{5514}'))
         self.dlg.interpolationMethodcomboBox.currentTextChanged.connect(self.updateInterpolationMethod)
@@ -197,6 +197,8 @@ class DataCHMU:
 
     def runTool(self):
 
+        ## Performing tests for parameter consistency, printing a warning message
+        ## if something is incorrect, and aborting the program if necessary
         if self.dlg.outputTabWidget.currentIndex() == 1:
             return 0
 
@@ -290,7 +292,8 @@ class DataCHMU:
         
         self.dlg.processingWarning.setVisible(True)
         QApplication.processEvents()
-        
+
+        ## Running the tool and returning a message based on its output
         output = mainFunction(parameters)
         self.dlg.processingWarning.hide()
 
@@ -332,7 +335,11 @@ class DataCHMU:
         if os.path.exists(filePath):
             return None
         elif os.access(parentDir, os.W_OK):
-            return filePath
+            root, ext = os.path.splitext(filePath)
+            if ext:
+                return filePath
+            else:
+                return filePath + ".gpkg"
         else:
             return None
 

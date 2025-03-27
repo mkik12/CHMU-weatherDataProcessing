@@ -9,10 +9,11 @@ from qgis.core import(
 
 def meanValuePerDate(IDs, dates, data, dataPath):
     '''
-    Computes the mean value for each selected station and its date intervals.
-    These values are stored in the lists of the "dataBox" according to their feature IDs
-    as decimal numbers or None.\n
-    (None is used if there is no measurment activity for the selected date interval)
+    Computes the mean value for each selected station and its date intervals.  
+    The computed values are stored in the lists of the "dataBox" dictionary,  
+    indexed by feature IDs as decimal numbers or None.  
+
+    (None is used if there is no measurement activity for the selected date interval.)
     '''
     for ID in IDs:
 

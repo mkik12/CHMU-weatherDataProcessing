@@ -28,7 +28,7 @@ The tool can generate the following outputs:
 4. Click the **Start** button to run the plugin.
 
 > [!TIP]
-> Be cautious when setting the extent layer parameter, which must be a vector layer - preferably a polygon - and the cell size, whose unit is determined by the chosen projection.
+> Be cautious when setting the extent layer parameter, which must be a vector layer - preferably a polygon - and the cell size, whose unit is determined by the chosen projection. If you want to save the plugin's output, enter a path that ends with a GIS raster file extension.
 
 ## How the Plugin Works  
 

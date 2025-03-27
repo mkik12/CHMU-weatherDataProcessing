@@ -6,7 +6,7 @@
 name=ČHMÚ/CHMI – Meteorological Data Processing
 qgisMinimumVersion=3.0
 description=Weather measurements and spatial interpolation.
-version=0.1
+version=1.0
 author=Mikuláš Kadečka
 email=mikulas.kad@seznam.cz
 
@@ -25,7 +25,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=automatizace, ČHMÚ, prostorová data, Python
 
-homepage=https://github.com/mkik12/CHMU-weatherDataProcessing
+homepage=https://github.com/mkik12/CHMU-weatherDataProcessing/blob/main/README.md
 category=Plugins
 icon=icon.png
 # experimental flag

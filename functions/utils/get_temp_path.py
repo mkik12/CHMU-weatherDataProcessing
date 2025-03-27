@@ -2,7 +2,7 @@ from tempfile import NamedTemporaryFile
 
 def getTempPath(fileExtension: str, directory: str) -> str: 
     '''
-    Creates a temporary path with a specified suffix. 
+    Creates a path to the plugin's temporary folder with the specified suffix.
     '''
 
     with NamedTemporaryFile(suffix=fileExtension, dir=directory) as tempFile:

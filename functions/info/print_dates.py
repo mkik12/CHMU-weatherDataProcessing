@@ -1,4 +1,8 @@
 def printDates(dates: list) -> None:
+    '''
+    A convenient way to print all date intervals in the Python terminal in QGIS.
+    '''
+
     print("Date intervals for different point layers used in raster interpolation.")
 
     for date in dates:

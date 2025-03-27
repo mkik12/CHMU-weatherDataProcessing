@@ -9,9 +9,10 @@ from qgis.core import(
 
 def stationsPerDateAsPoints(data: dict, i: int, points: QgsVectorLayer):
     '''
-    Creates point features for vector layer with a "value" attribute representing
-    the mean value of the selected stations based on their date interval.\n
-    This function works with the items stored in the "dataBox".
+    Creates point features for a vector layer with a "value" attribute representing  
+    the mean value of the selected stations based on their date intervals.  
+
+    This function processes the items stored in the "dataBox".
     '''
 
     newFeatures = []

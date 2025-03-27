@@ -1,6 +1,6 @@
 def createFinalTXTRaster(path, arrRaster, extent: tuple, cellSize: float) -> None:
     '''
-    Stores the final NumPy array raster as a ASCII format raster.
+    Stores the final NumPy array raster in ASCII format for GIS compatibility.
     '''
 
     with open(path, "w") as file:

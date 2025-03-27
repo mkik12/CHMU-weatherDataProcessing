@@ -1,8 +1,8 @@
 def prepareDataBox(IDs: list) -> dict[list]:
     '''
-    Creates a dictionary containing these items:\n
-    * key = station ID (used as an index for values stored in lists)\n
-    * value = empty list (used for storing mean values for every station's date interval)
+    Creates a dictionary with the following structure:
+    - Key: Station ID (used as an index for values stored in lists).
+    - Value: An empty list (used to store mean values for each station's date interval).
     '''
 
     dataBox = {}

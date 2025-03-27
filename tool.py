@@ -1,5 +1,5 @@
-
-# This is a part of "ČHMÚ - Data o počasí," a QGIS plugin that processes meteorological data published by CHMI.  
+# This is a part of "ČHMÚ/CHMI – Meteorological Data Processing" a QGIS plugin
+# that processes meteorological data published by CHMI.  
 # Copyright (C) 2025 by Mikuláš Kadečka - mikulas.kad@seznam.cz  
 
 # This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@ from functions import *
 
 def mainFunction(parameters: dict):
 
+    ## Storing parameters from dictionary to variables
+
     dataPath = parameters["dataPath"]
     outputPath = parameters["outputPath"]
     outputName = parameters["outputName"]
@@ -33,13 +35,17 @@ def mainFunction(parameters: dict):
     category = parameters["category"]
     pointOutput = parameters["pointOutput"]
 
+    ## Loading and reprojecting the station point layer
     layer = QgsVectorLayer(os.path.join(dataPath, "stations.gpkg"), "stations", "ogr")
     projectedLayer = processing.run("native:reprojectlayer", {'INPUT': layer,
                                                              'TARGET_CRS': crs,
                                                              'OUTPUT': 'TEMPORARY_OUTPUT'})
     stationsLayer = projectedLayer["OUTPUT"]
 
+    ## Resizing the extent layer (if necessary), reprojecting it, and creating a bounding geometry
+    ## for consistent selection of stations
     try:
+        intersectArea = user.resizeExtent(intersectArea)
         projectedArea = processing.run("native:reprojectlayer", {'INPUT': intersectArea,
                                                                         'TARGET_CRS': crs,
                                                                         'OUTPUT': 'TEMPORARY_OUTPUT'})
@@ -51,14 +57,16 @@ def mainFunction(parameters: dict):
                                                     'OUTPUT': 'TEMPORARY_OUTPUT'})
     except:
         return 4
-
+    
+    ## Selecting the stations of interest
     stationsLayerSelected = processing.run("native:selectbylocation", {
                                             'INPUT': stationsLayer,
                                             'PREDICATE': [0],
                                             'INTERSECT': intersectAreaAsEnvelope["OUTPUT"],
                                             'METHOD': 0})
 
-    ## 3.2 Variable preparation for further processing
+    ## Creating date intervals for different iterations of raster interpolation and calculating 
+    ## the corresponding values
     intersectAreaExtent = intersectAreaAsEnvelope["OUTPUT"].extent()
     extentCoordinates = info.getExtentAsSingleCoordinates(intersectAreaExtent)
 
@@ -79,15 +87,16 @@ def mainFunction(parameters: dict):
     dataBox = utils.prepareDataBox(IDs)
 
     data = essentials.meanValuePerDate(IDs, dates, dataBox, dataPath)
-    
+
+    ## Weights will later be used to calculate the weighted average raster for the final output of the plugin
     weights = utils.getWeights(dates)
     weightDivisor = 0
 
     interpolatedRasters = []
     layersToLoad = []
 
-    print(data)
-    ## 3.3 Cycle that creates a list of weighted NumPy arrays generated from raster interpolation
+    ## Creating a separate station point layer for each date interval, interpolating them, and creating
+    ## rasters stored as a numpy array (a better approach than using the buggy Raster Calculator)
     for i in range(len(dates)):
 
         memoryLayer = QgsVectorLayer(f"Point?crs={crs.authid()}", "layer", "memory")
@@ -105,7 +114,6 @@ def mainFunction(parameters: dict):
         options = QgsVectorFileWriter.SaveVectorOptions()
         options.driverName = "GPKG"
         options.fileEncoding = "UTF-8"
-        # options.ct = QgsCoordinateTransformContext()
         options.crs = memoryLayer.crs()
         QgsVectorFileWriter.writeAsVectorFormatV3(memoryLayer, tempPath, QgsCoordinateTransformContext(), options)
         layersToLoad.append(tempPath)
@@ -119,17 +127,18 @@ def mainFunction(parameters: dict):
 
         weights.pop(0)
 
-    ## 3.4 Creating the weighted average raster
+    ## Creating the weighted average raster from the interpolated data
     if len(interpolatedRasters) == 0:
         return 2
     else:
         finalArrRaster = raster.createFinalArrRaster(interpolatedRasters, weightDivisor)
 
-    ## 3.5 Saving the final raster in ASCII raster format (GIS format) 
+    ## Saving the numpy raster in ASCII format is the easiest way to convert it into a GIS-compatible format
     tempPath = utils.getTempPath(".asc", tempDir)
 
     raster.createFinalTXTRaster(tempPath, finalArrRaster, extentCoordinates, cellSize)
 
+    ## Saving the raster in the format specified by the user
     if outputPath is None:
         layer = processing.run("gdal:translate", {'INPUT':tempPath, 'OUTPUT' : 'TEMPORARY_OUTPUT'})
         outputLayer = QgsRasterLayer(layer["OUTPUT"], outputName)
@@ -139,12 +148,15 @@ def mainFunction(parameters: dict):
         processing.run("gdal:assignprojection", {'INPUT':outputPath,'CRS': crs})
         outputLayer = QgsRasterLayer(outputPath, outputName)
 
-    ## 3.6 Loading the program output into the current QGIS project
+    ## Loading the final raster into the QGIS project and optionally loading the point layers
+    ## used for interpolation
     QgsProject.instance().addMapLayer(outputLayer)
     try:
         if pointOutput is False:
             info.loadInterpolatedLayers(layersToLoad, dates, category)
     except:
         return 3
+    
+    ## Removing the temporary files created by this program
     utils.removeTempFiles(tempDir)
     return 0

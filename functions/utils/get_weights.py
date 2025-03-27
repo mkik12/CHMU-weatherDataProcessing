@@ -1,7 +1,7 @@
 def getWeights(dates: list) -> list:
     '''
-    Computes a list of integers based on the day count of every date interval.
-    These weigths are used when calculating the weighted average raster.
+    Computes a list of integers based on the day count of each date interval.  
+    These weights are used to calculate the weighted average raster.
     '''
     
     weights = []

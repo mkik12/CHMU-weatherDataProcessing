@@ -6,6 +6,10 @@ from qgis.core import (
 )
 
 def loadInterpolatedLayers(inputLayers, dates, category):
+    '''
+    Loads and groups different station point layers used in raster interpolation iterations  
+    into the current QGIS project.
+    '''
 
     root = QgsProject.instance().layerTreeRoot()
     group = root.addGroup(f"{category} - bodová pole")

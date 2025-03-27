@@ -1,7 +1,7 @@
 def getExtentAsSingleCoordinates(extent) -> tuple:
     '''
-    Accepts a QgsRectangle as input and returns a tuple containing 
-    decimal numbers representing the X and Y minimum and maximum coordinates.
+    Accepts a QgsRectangle as input and returns a tuple of decimal numbers 
+    representing the minimum and maximum X and Y coordinates.
     '''
 
     xMin = extent.xMinimum()

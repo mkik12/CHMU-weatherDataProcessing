@@ -2,8 +2,8 @@ import numpy as np
 
 def createFinalArrRaster(rasters: list, divisor: int) -> np.array:
     '''
-    Computes a weighted average raster from a list of NumPy arrays 
-    and returns the resulting raster as a NumPy array.
+    Computes a weighted average raster from a list of NumPy arrays  
+    and returns the result as a NumPy array.
     '''
 
     newRaster = rasters[0]

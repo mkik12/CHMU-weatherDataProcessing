@@ -56,10 +56,10 @@ def getUniqueDates(dates) -> list:
 
 def getFeaturesMetadata(layer, dateCondition: tuple) -> tuple:
     '''
-    Returns a tuple of lists containing:\n 
-    * date intervals (based on the user's date condition and the station's measurement 
-    activity - date intervals are stored in chronological order)\n
-    * IDs (of selected station features)
+    Returns a tuple of lists containing:
+    - ***Date intervals***: Based on the user's date condition and the station's measurement 
+    activity, stored in chronological order.
+    - ***IDs***: The IDs of selected station features.
     '''
 
     selectedStations = [feature for feature in layer.getSelectedFeatures()]

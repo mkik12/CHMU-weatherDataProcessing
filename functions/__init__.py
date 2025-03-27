@@ -1,4 +1,5 @@
-# This is a part of "ČHMÚ - Data o počasí," a QGIS plugin that processes meteorological data published by CHMI.  
+# This is a part of "ČHMÚ/CHMI – Meteorological Data Processing" a QGIS plugin
+# that processes meteorological data published by CHMI.  
 # Copyright (C) 2025 by Mikuláš Kadečka - mikulas.kad@seznam.cz  
 
 # This program is free software: you can redistribute it and/or modify
