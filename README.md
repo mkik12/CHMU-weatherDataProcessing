@@ -6,6 +6,9 @@ This QGIS plugin processes meteorological measurements published by the Czech Hy
 
 You can either download preprocessed datasets from this [webpage](https://drive.google.com/drive/folders/12qYemjNOktYcyJgaK6pPfBqbJCzDAlbV?usp=sharing) or use scripts from this [GitHub repository](https://github.com/mkik12/CHMU-weatherFilesScraper) to automate the download of raw data from the CHMI website and convert them into a format suitable for GIS processing.
 
+> [!NOTE]  
+> If you are planning on using the plugin in QGIS, please download it from the [official plugin repository](https://plugins.qgis.org/plugins/CHMU_weatherDataProcessing/).
+
 ## What Results to Expect
 
 > [!IMPORTANT]  
